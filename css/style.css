@@ -1,0 +1,81 @@
+#back_home {
+    float: right;
+    text-align: center;
+}
+.desc {
+    font-size: 18px;
+    border-bottom: 3px solid #68dd72;
+}
+.detail {
+    display: none;
+    background: #fff;
+    width: 90%;
+    height: 10%;
+}
+#logout {
+    float: right;
+    text-align: center;
+}
+.required {
+    background-color: #f00a0a;
+    border-radius: 5px;
+    font-weight: 900;
+    color: #ffffff;
+}
+.sel_p {
+    line-height: 0;
+}
+.tabs {
+    margin-top: 30px;
+    padding-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 00 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    margin: 0 auto;
+}
+.tab {
+    width: calc(100%/2);
+    height: 50px;
+    border-bottom: 3px solid #5ab4bd;
+    background-color: #d9d9d9;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    color: #565656;
+    display: block;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+.tab:hover {
+    opacity: 0.75;
+}
+input[name="tab"]{
+    display: none;
+}
+.tab_contents {
+    display: none;
+    padding: 40px 40px 0;
+    clear: both;
+    overflow: hidden;
+}
+#society:checked ~ #society_contents,
+#student:checked ~ #student_contents {
+    display: block;
+}
+.tabs input:checked + .tab {
+    background-color: #5ab4bd;
+    color: #fff;
+}
+textarea {
+    resize: none;
+}
+.write{
+    border-radius: 0.67em;
+}
+@media screen and (max-width: 480px) { 
+    .button {
+        margin: auto;
+    }
+}

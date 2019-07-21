@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style2.css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=M+PLUS+1p">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+    <title>MeiTell replica</title>
+</head>
+<body>
+    <p class="desc">どっちを作る？</p>
+    <div class="tabs">
+        <input type="radio" id="student" name="tab" checked>
+        <label class="tab" for="student">学生用</label>
+        <input type="radio" id="society" name="tab">
+        <label class="tab" for="society">社会人用</label>
+        <div class="tab_contents" id="student_contents">
+            <div class="description">
+                <form method="POST" action="xxxx.cgi">
+                    <!-- disabledにしているものは既に登録しているデータを引っ張ってくる想定 -->
+                    <p>名前:<input type="text" name="name" value="瀬戸口 洋子" ></p>
+                    <p>生年月日:<input type="date" name="date">
+                        or <input type="date" name="date" value="1993-02-14" ></p>
+                        <p>性別:<select name="sex"><option value="">-</option><option value="man">男性</option><option value="woman">女性</option></select>
+                    or <input type="text" name="sex" value="女性" ></p>
+                    <p>電話番号:<input type="tel" name="tel" value="050-5594-6734" ></p>
+                    <p>メールアドレス: <input type="email" name="email" value="https://tabelog.com/kyoto/A2601/A260603/26029543/"></p>
+                    <p>学校名: <input type="text" name="school" value="神戸大学" ></p><!-- 登録するときは学校区分あったほうがいいかも -->
+                    <p>学部・学科: <input type="text" name="department" value="工学部情報知能工学科"></p>
+                    <!-- プロフィール写真は略 -->
+                    <p class="desc">欲しい機能にチェックを入れて追加してください。</p>
+                    <div class="sel_opts">
+                            <label for="sel_opt1"><input type="checkbox" name="check1" id="sel_opt1" autocomplete="off">保有資格</label>
+                            <label for="sel_opt2"><input type="checkbox" name="check2" id="sel_opt2" autocomplete="off">あなたの過去エピソード</label>
+                            <label for="sel_opt3"><input type="checkbox" name="check3" id="sel_opt3" autocomplete="off">趣味</label>
+                            <label for="sel_opt4"><input type="checkbox" name="check4" id="sel_opt4" autocomplete="off">特技</label>
+                            <label for="sel_opt5"><input type="checkbox" name="check5" id="sel_opt5" autocomplete="off">希望勤務地</label>
+                            <label for="sel_opt6"><input type="checkbox" name="check6" id="sel_opt6" autocomplete="off">長所</label>
+                            <label for="sel_opt7"><input type="checkbox" name="check7" id="sel_opt7" autocomplete="off">短所</label>
+                            <label for="sel_opt8"><input type="checkbox" name="check8" id="sel_opt8" autocomplete="off">研究テーマ</label>
+                            <label for="sel_opt9"><input type="checkbox" name="check9" id="sel_opt9" autocomplete="off">希望職種</label>
+                            <label for="sel_opt10"><input type="checkbox" name="check10" id="sel_opt10" autocomplete="off">開発経験</label>
+                            <label for="sel_opt11"><input type="checkbox" name="check11" id="sel_opt11" autocomplete="off">自分の特徴・アピールポイント</label>
+                            <label for="sel_opt12"><input type="checkbox" name="check12" id="sel_opt12" autocomplete="off">座右の銘</label>
+                            <label for="sel_opt13"><input type="checkbox" name="check13" id="sel_opt13" autocomplete="off">就職活動の有無</label>
+                        <div class="detail" id="detail1">
+                            <p class="sel_p">保有資格</p>
+                            <textarea name="certificate1" cols="80" rows="1">応用情報</textarea> <!--チェックボックスでの登録は未実装です -->
+                            <textarea name="certificate2" cols="80" rows="1"></textarea>
+                            <textarea name="certificate3" cols="80" rows="1"></textarea>
+                            <textarea name="certificate4" cols="80" rows="1"></textarea>
+                            <textarea name="certificate5" cols="80" rows="1"></textarea>
+                        </div>
+                        <br>
+                        <div class="detail" id="detail2">
+                            <p class="sel_p">あなたの過去エピソード</p>
+                            <textarea name="past_epi" class="write" cols="80" rows="10"></textarea>
+                        </div>
+                        <br>
+                        <div class="detail" id="detail3">
+                            <p class="sel_p">趣味</p>
+                            <textarea name="hobby" cols="80" rows="1"></textarea>
+                        </div>
+                        <br>
+                        <div class="detail" id="detail4">
+                            <p class="sel_p">特技</p>
+                            <textarea name="skill" cols="80" rows="1"></textarea>
+                        </div>
+                        <br>
+                        <div class="detail" id="detail5">
+                            <p class="sel_p">希望希望地</p>
+                            <textarea name="workplace" cols="80" rows="1"></textarea>
+                        </div>
+                        <br>
+                        <div class="detail" id="detail6">
+                            <p class="sel_p">長所</p>
+                            <textarea name="advantage" class="write" cols="80" rows="10"></textarea>
+                        </div>
+                        <br>
+                        <div class="detail" id="detail7">
+                            <p class="sel_p">短所</p>
+                            <textarea name="disadvantage" class="write" cols="80" rows="10"></textarea>
+                        </div>
+                        <br>
+                        <div class="detail" id="detail8">
+                            <p class="sel_p">研究テーマ:</p><textarea name="research" cols="80" rows="1"></textarea>
+                            <p class="sel_p">研究内容:</p><textarea name="research_content" class="write" cols="80" rows="10"></textarea>
+                        </div>
+                        <br>
+                        <div class="detail" id="detail9">
+                            <p class="sel_p">希望職種</p>
+                            <textarea name="job" cols="80" rows="1"></textarea>
+                        </div>
+                        <br>
+                        <div class="detail" id="detail10">
+                            <p class="sel_p">開発したもの1:</p><textarea name="development" cols="80" rows="1"></textarea>
+                            <p class="sel_p">外部URL (GitHubなど開発ツール)があれば</p><textarea name="url" cols="50" rows="1"></textarea>
+                        </div>
+                        <br>
+                        <div class="detail" id="detail11">
+                            <p class="sel_p">自分の特徴・アピールポイント</p>
+                            <textarea name="appeal" class="write" cols="80" rows="10"></textarea>
+                        </div>
+                        <br>
+                        <div class="detail" id="detail12">
+                            <p class="sel_p">座右の銘</p>
+                            <textarea name="motto" cols="80" rows="1"></textarea>
+                        </div>
+                        <br>
+                        <div class="detail" id="detail13">
+                            <p class="sel_p">就職活動の有無</p>
+                            <select name="act"><option value="">-</option><option value="yes">有り(活動している)</option><option value="no">無し(活動終了)</option></select>
+                        </div>
+                    </div>
+                    <p><input type="submit" value="登録する"></p>
+                </form>
+            </div>
+        </div>
+        <div class="tab_contents" id="society_contents">
+            <div class="description">
+                <form method="POST" action="xxxx.cgi">
+                    <!-- disabledにしているものは既に登録しているデータを引っ張ってくる想定 -->
+                    <p>名前:<input type="text" name="name" value="瀬戸口 洋子" ></p>
+                    <p>生年月日:<input type="date" name="date">
+                    or <input type="date" name="date" value="1993-02-14"></p>
+                    <p>性別:<select name="sex"><option value="">-</option><option value="man">男</option><option value="woman">女</option></select>
+                    or <input type="text" name="sex" value="女"></p>
+                    <p>電話番号:<input type="tel" name="tel" value="050-5594-6734"></p>
+                    <p>メールアドレス: <input type="email" name="email" value="https://tabelog.com/kyoto/A2601/A260603/26029543/"></p>
+                    <p>職歴1: <input type="text" name="career1" value="グーグル株式会社"></p>
+                    <p>職歴2: <input type="text" name="career2" value=""></p>
+                    <p>職歴3: <input type="text" name="career3" value=""></p>
+                    <!-- プロフィール写真は略 -->
+                    <p class="desc">欲しい機能にチェックを入れて追加してください。</p>
+                    <label for="sel_opt14"><input type="checkbox" name="check14" id="sel_opt14" autocomplete="off">保有資格</label>
+                    <label for="sel_opt15"><input type="checkbox" name="check15" id="sel_opt15" autocomplete="off">職務経験</label>
+                    <label for="sel_opt16"><input type="checkbox" name="check16" id="sel_opt16" autocomplete="off">趣味</label>
+                    <label for="sel_opt17"><input type="checkbox" name="check17" id="sel_opt17" autocomplete="off">特技</label>
+                    <label for="sel_opt18"><input type="checkbox" name="check18" id="sel_opt18" autocomplete="off">キャリアプラン</label>
+                    <label for="sel_opt19"><input type="checkbox" name="check19" id="sel_opt19" autocomplete="off">開発経験</label>
+                    <label for="sel_opt20"><input type="checkbox" name="check20" id="sel_opt20" autocomplete="off">希望職種</label>
+                    <div class="sel_opts">
+                        <div class="detail" id="detail14">
+                            <p class="sel_p">保有資格</p>
+                            <textarea name="certificate1" cols="80" rows="1">応用情報</textarea> <!--チェックボックスでの登録は未実装です -->
+                            <textarea name="certificate2" cols="80" rows="1"></textarea>
+                            <textarea name="certificate3" cols="80" rows="1"></textarea>
+                            <textarea name="certificate4" cols="80" rows="1"></textarea>
+                            <textarea name="certificate5" cols="80" rows="1"></textarea>
+                        </div>
+                        <br>
+                        <div class="detail" id="detail15">
+                            <p class="sel_p">職務履歴</p>
+                            <textarea name="past_epi" class="write" cols="80" rows="10"></textarea>
+                        </div>
+                        <br>
+                        <div class="detail" id="detail16">
+                            <p class="sel_p">趣味</p>
+                            <textarea name="hobby" cols="80" rows="1"></textarea>
+                        </div>
+                        <br>
+                        <div class="detail" id="detail17">
+                            <p class="sel_p">特技</p>
+                            <textarea name="skill" cols="80" rows="1"></textarea>
+                        </div>
+                        <br>
+                        <div class="detail" id="detail18">
+                            <p class="sel_p">キャリアプラン</p>
+                            <textarea name="careerplan" class="write" cols="80" rows="10"></textarea>
+                        </div>
+                        <br>
+                        <div class="detail" id="detail19">
+                            <p class="sel_p">開発したもの1:</p><textarea name="development" cols="80" rows="1"></textarea>
+                            <p class="sel_p">外部URL (GitHubなど開発ツール)があれば</p><textarea name="url" cols="50" rows="1"></textarea>
+                        </div>
+                        <br>
+                        <div class="detail" id="detail20">
+                            <p class="sel_p">希望職種</p>
+                            <textarea name="job" cols="80" rows="1"></textarea>
+                        </div>
+                    </div>
+                    <p><input type="submit" value="登録する"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
